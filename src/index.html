@@ -13,10 +13,10 @@
     <p class="description-paragraph">Welcome to Keeply! This is a 
       Bookmark application to save your favorite websites!
     Press the "Add Bookmark" button below to begin!</p>
-    <button type="button">Add Bookmark</button>
+    <button type="button" class="show-bookmark-form">Add Bookmark</button>
     <!-- On click of add bookmark button, bookmark form will appear -->
 
-    <form id="bookmark-list-form">
+    <form id="bookmark-list-form" class="hideBookMarkForm">
       <!-- If error is triggered, reveal the element below -->
       <!-- <div class="error-container">Some text</div> -->
       <label for="url-entry">Website Url:</label>
@@ -36,7 +36,7 @@
             <option value="4star">4</option>
             <option value="5star">5</option>
           </select>
-      <button type="submit">Add bookmark</button>
+      <button type="submit">Bookmark It!</button>
     </form>
 
     <!-- When bookmark is created, add it to the list below -->
