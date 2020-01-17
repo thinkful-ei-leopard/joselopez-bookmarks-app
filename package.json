@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/JozyL27/Bookmark_api#readme",
   "dependencies": {
+    "cuid": "^2.1.8",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
