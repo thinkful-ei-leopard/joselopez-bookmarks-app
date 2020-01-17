@@ -2,23 +2,33 @@
 <html lang="en">
 
 <head>
-  <title>Shopping List</title>
+  <title> Keeply | An online Bookmark App</title>
   <link rel="shortcut icon" href="#">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
-    <h1>Bookmark Application</h1>
+    <h1>Keeply</h1>
+    <p class="description-paragraph">Welcome to Keeply! This is a 
+      Bookmark application to save your favorite websites!
+    Press the "Add Bookmark" button below to begin!</p>
+    <button type="button">Add Bookmark</button>
+    <!-- On click of add bookmark button, bookmark form will appear -->
+
     <form id="bookmark-list-form">
+      <!-- If error is triggered, reveal the element below -->
       <!-- <div class="error-container">Some text</div> -->
-      <label for="bookmark-entry">Add a bookmark</label>
-      <input type="url" name="bookmark-entry" class="js-bookmark-entry" placeholder="e.g., Google.com"
+      <label for="url-entry">Website Url:</label>
+      <input type="url" name="url-entry" class="js-url-entry" placeholder="e.g., Google.com"
         required>
-      <button type="submit">Add bookmark</button>
-    </form>
-    <div>
-        <label for="rating">Filter Bookmarks by Rating</label>
+        <label for="title-entry">Title:</label>
+        <input type="text" name="title-entry" class="js-title-entry" placeholder="Google"
+        required>
+        <label for="description-entry">Description:</label>
+        <input type="text" name="description-entry" class="js-description-entry" placeholder="Description"
+        >
+        <label for="rating">Rate:</label>
         <select name="rating" form="bookmark-list-form">
             <option value="1star">1</option>
             <option value="2star">2</option>
@@ -26,10 +36,30 @@
             <option value="4star">4</option>
             <option value="5star">5</option>
           </select>
-          <input type="submit">
-    </div>
+      <button type="submit">Add bookmark</button>
+    </form>
+
+    <!-- When bookmark is created, add it to the list below -->
+
     <ul class="bookmark-list js-bookmark-list">
+      <!-- On click, reveal description of listed item -->
+      <li class="reveal-description">User-added bookmark</li>
     </ul>
+
+        <!-- On form submit reveal filter paragraph and filter feature -->
+        <div class="filter-feature-hidden">
+          <p class="filter-feature-paragraph"> You may filter your Bookmarks by using the filter feature below!</p>
+          <label for="rating">Filter By Rating</label>
+          <select name="rating" form="bookmark-list-form">
+              <option value="1star">1</option>
+              <option value="2star">2</option>
+              <option value="3star">3</option>
+              <option value="4star">4</option>
+              <option value="5star">5</option>
+            </select>
+            <button type="submit">Filter</button>
+      </div>
+
   </div>
 
 </body>
