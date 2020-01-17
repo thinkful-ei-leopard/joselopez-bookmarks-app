@@ -1,0 +1,23 @@
+{
+  "name": "Bookmark_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JozyL27/Bookmark_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JozyL27/Bookmark_api/issues"
+  },
+  "homepage": "https://github.com/JozyL27/Bookmark_api#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
