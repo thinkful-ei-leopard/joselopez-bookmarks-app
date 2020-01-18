@@ -32,12 +32,12 @@ function getBookMarks() {
 }
 
 
-function createBookMark(title, url, desc = 'No Description', rating = 1){
-    const newBookMark = JSON.stringify({ title, url, desc, rating });
+function createBookMark(website){
+    // const newBookMark = JSON.stringify(website);
     return listApiFetch(`${BASE_URL}/bookmarks`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: newBookMark
+        body: website
     });
 }
 

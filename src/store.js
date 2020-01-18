@@ -1,4 +1,3 @@
-/* eslint-disable strict */
 
 const store = {
   bookmarks: [],
@@ -13,12 +12,13 @@ function findById(id){
 };
 
 function addItem(item) {
-    this.store.push(item);
+    store.bookmarks.push(item);
 };
 
 
 
 export default {
     findById,
-    addItem
+    addItem,
+    store
 };
