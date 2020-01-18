@@ -6,6 +6,9 @@ const store = {
   filter: 0
 };
 
+console.log(store)
+//filter items by changing value of filter, then filter by rating using
+// filter method
 
 function findById(id){
     return this.store.find(currentItem => currentItem.id === id);

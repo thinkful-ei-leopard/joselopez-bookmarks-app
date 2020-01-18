@@ -33,7 +33,6 @@ function getBookMarks() {
 
 
 function createBookMark(website){
-    // const newBookMark = JSON.stringify(website);
     return listApiFetch(`${BASE_URL}/bookmarks`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
