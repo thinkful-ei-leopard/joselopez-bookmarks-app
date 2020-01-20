@@ -9,6 +9,7 @@ function handleAddBookMarkForm() {
 }
 
 
+
 function generateBookMark(item) {
     let itemTitle = `<span class="bookmark-item bookmark-item-toggled">
     ${item.title} Rating: ${item.rating}</span>`;
@@ -60,6 +61,7 @@ function handleDescriptionButton() {
 }
 
 
+
 function concatBookMarks(bookmark) {
     const list = bookmark.map((element) => generateBookMark(element))
     return list.join('')
@@ -90,11 +92,35 @@ function handleNewBookMarkSubmit(){
 }
 
 
+function handleFilterButton() {
+    $('.filterFeature').submit(function(event) {
+        event.preventDefault();
+        let userFilterValue = $('select#filterVal option:checked').val()
+        store.store.filter = userFilterValue;
+        render()
+    })
+}
+
+function resetFilterFeature() {
+    $('.filterFeature').on('click', '.resetFilt', function(event) {
+        store.store.filter = 0;
+        render()
+    })
+}
+
+
+// if filter property is greater than 0? then filter items in items var
+// then render, get render value then add it to render prop
+
+
 function render(){
     let itemsStore = store.store;
     let items = itemsStore.bookmarks;
-    console.log(items)
 
+    if(store.store.filter > 0) {
+        items = items.filter(el=> el.rating == store.store.filter)
+    }
+    
     const bookMarkListitems = concatBookMarks(items)
     $('.js-bookmark-list').html(bookMarkListitems)
 }
@@ -104,6 +130,8 @@ function bindEventListeners() {
     handleNewBookMarkSubmit();
     handleDescriptionButton();
     handleAddBookMarkForm();
+    handleFilterButton();
+    resetFilterFeature();
 }
 
 export default {

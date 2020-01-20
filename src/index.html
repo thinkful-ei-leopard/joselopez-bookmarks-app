@@ -49,15 +49,18 @@
         <!-- On form submit reveal filter paragraph and filter feature -->
         <div class="filter-feature-hidden">
           <p class="filter-feature-paragraph"> You may filter your Bookmarks by using the filter feature below!</p>
+          <form class="filterFeature">
           <label for="filter">Filter By Rating</label>
-          <select name="filter">
+          <select id="filterVal" name="filter" form="filterFeature">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-            <button type="submit">Filter</button>
+            <button class="filterButton" type="submit">Filter</button>
+            <button class="resetFilt" type="button"> Reset Filter </button>
+            </form>
       </div>
 
   </div>
