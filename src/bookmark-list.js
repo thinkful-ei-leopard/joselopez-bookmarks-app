@@ -108,6 +108,17 @@ function resetFilterFeature() {
     })
 }
 
+function handleDeleteButton() {
+    $('ul').on('click', '.js-item-delete', function(event) {
+        const id = getItemIdFromElement(event.currentTarget);
+        const item = store.findById(id);
+        api.deleteBookMark(item);
+        let itemIndex = store.store.bookmarks.indexOf(item)
+        store.store.bookmarks.splice(itemIndex, 1)
+        render();
+    })
+}
+
 
 // if filter property is greater than 0? then filter items in items var
 // then render, get render value then add it to render prop
@@ -132,6 +143,7 @@ function bindEventListeners() {
     handleAddBookMarkForm();
     handleFilterButton();
     resetFilterFeature();
+    handleDeleteButton();
 }
 
 export default {

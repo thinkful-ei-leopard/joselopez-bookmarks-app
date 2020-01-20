@@ -40,8 +40,16 @@ function createBookMark(website){
     });
 }
 
+function deleteBookMark(item) {
+    return listApiFetch(`${BASE_URL}/bookmarks/${item.id}`, {
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json'}  
+    })
+}
+
 export default {
     listApiFetch,
     getBookMarks,
     createBookMark,
+    deleteBookMark
 };
