@@ -2,18 +2,24 @@ import $ from 'jquery';
 import store from './store';
 import api from './api';
 
-
-function handleAddBookMarkButton() {
-    $('.container').on('click','.show-bookmark-form', event => {
-        $('form').removeClass('hideBookMarkForm')
+function handleAddBookMarkForm() {
+    $('.container').on('click', '.show-bookmark-form', event => {
+        $('#bookmark-list-form').toggle()
     })
 }
 
+
 function generateBookMark(item) {
     let itemTitle = `<span class="bookmark-item bookmark-item-toggled">
-    ${item.title}</span>`;
+    ${item.title} Rating: ${item.rating}</span>`;
+
+    if(item.expanded) {
     return `<li class="js-item-element" data-item-id="${item.id}">
     ${itemTitle}
+    <p> ${item.desc} </p>
+    <form action="${item.url}">
+    <input type="submit" value="Go to ${item.title}" />
+    </form>
     <div class="bookmark-item-controls">
     <button class="bookmark-toggleviewbutton js-item-toggle">
     <span class="button-label"> View description </span>
@@ -22,8 +28,37 @@ function generateBookMark(item) {
     <span class="button-label"> delete </span>
     </button>
     </div>
-    </li>`
+    </li>`} else {
+        return `<li class="js-item-element" data-item-id="${item.id}">
+        ${itemTitle}
+        <div class="bookmark-item-controls">
+        <button class="bookmark-toggleviewbutton js-item-toggle">
+        <span class="button-label"> View description </span>
+        </button>
+        <button class="bookmark-delete js-item-delete">
+        <span class="button-label"> delete </span>
+        </button>
+        </div>
+        </li>`
+    }
 }
+
+function getItemIdFromElement(item) {
+    return $(item)
+      .closest('.js-item-element')
+      .data('item-id');
+  };
+
+
+function handleDescriptionButton() {
+    $('.bookmark-list').on('click', '.js-item-toggle', event => {
+        const id = getItemIdFromElement(event.currentTarget);
+        const item = store.findById(id);
+        item.expanded = !item.expanded;
+        render()
+    })
+}
+
 
 function concatBookMarks(bookmark) {
     const list = bookmark.map((element) => generateBookMark(element))
@@ -55,11 +90,10 @@ function handleNewBookMarkSubmit(){
 }
 
 
-
 function render(){
     let itemsStore = store.store;
-
     let items = itemsStore.bookmarks;
+    console.log(items)
 
     const bookMarkListitems = concatBookMarks(items)
     $('.js-bookmark-list').html(bookMarkListitems)
@@ -67,8 +101,9 @@ function render(){
 
 
 function bindEventListeners() {
-    handleAddBookMarkButton()
-    handleNewBookMarkSubmit()
+    handleNewBookMarkSubmit();
+    handleDescriptionButton();
+    handleAddBookMarkForm();
 }
 
 export default {
