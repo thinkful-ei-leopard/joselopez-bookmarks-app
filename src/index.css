@@ -13,12 +13,54 @@ a {
 
 li {
     list-style: none;
+    width: 400px;
+    padding: 20px;
+    border-top: 5px solid #8360c3;
+    border-bottom: 5px solid #2ebf91;
+    background-image: 
+        linear-gradient(#8360c3, #2ebf91),
+        linear-gradient(#8360c3, #2ebf91)
+    ;
+    background-size:5px 100%;
+    background-position:0 0, 100% 0;
+    background-repeat:no-repeat;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center;
 }
+
+
+li:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.4s;
+  }
+
+  form {
+      margin-top: 10px;
+  }
+
 
 h1 {
     color: rgb(0,204,0);
     text-align: center;
+    border: 2px solid rgb(255,255,255);opacity:0.6;;
+    padding: 10px;
+    border-radius: 5px;
 }
+
+h1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    /* background-color: rgb(0,204,0); */
+    color: rgb(0,204,0);
+    transition-duration: 0.4s;
+  }
+
+  h1:active {
+    background-color: rgb(0,204,0);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 
 .container {
     display: flex;
@@ -151,10 +193,7 @@ button {
   }
 
   @media screen and (min-width: 601px) {
-      body {
-          background-color: thistle;
-      }
-
+ 
       h1 {
           font-size: 60px;
       }
