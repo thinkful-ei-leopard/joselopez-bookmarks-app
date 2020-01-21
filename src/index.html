@@ -14,7 +14,6 @@
       Bookmark application to save your favorite websites!
     Begin to save your favorite sites below!</p>
     <button type="button" class="show-bookmark-form">Add Bookmark</button>
-    <!-- On click of add bookmark button, bookmark form will appear -->
 
     <form id="bookmark-list-form">
       <!-- If error is triggered, reveal the element below -->
@@ -39,15 +38,11 @@
       <button type="submit">Bookmark It!</button>
     </form>
 
-    <!-- When bookmark is created, add it to the list below -->
 
     <ul class="bookmark-list js-bookmark-list">
-      <!-- On click, reveal description of listed item -->
-      <li class="reveal-description">User-added bookmark</li>
     </ul>
 
-        <!-- On form submit reveal filter paragraph and filter feature -->
-        <div class="filter-feature-hidden">
+        <div class="filter-feature-container">
           <p class="filter-feature-paragraph"> You may filter your Bookmarks by using the filter feature below!</p>
           <form class="filterFeature">
           <label for="filter">Filter By Rating</label>
