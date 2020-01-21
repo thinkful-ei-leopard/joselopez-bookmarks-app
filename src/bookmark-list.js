@@ -19,7 +19,7 @@ function generateBookMark(item) {
     ${itemTitle}
     <p> ${item.desc} </p>
     <form action="${item.url}">
-    <input type="submit" value="Go to ${item.title}" />
+    <input type="submit" class="expandedButton" value="Go to ${item.title}" />
     </form>
     <div class="bookmark-item-controls">
     <button class="bookmark-toggleviewbutton js-item-toggle">

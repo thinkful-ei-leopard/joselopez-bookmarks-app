@@ -27,6 +27,18 @@ h1 {
     text-align: center;
 }
 
+button {
+    cursor: pointer;
+    radius: 10px;
+    border-radius: 5px;
+}
+
+.show-bookmark-form:active {
+    background-color: rgb(0,204,0);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 .show-bookmark-form:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     background-color: rgb(0,204,0);
@@ -41,4 +53,67 @@ h1 {
     transition-duration: 0.4s;
   }
 
+  .bookmark-delete:active {
+    background-color: red;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+ 
+  .js-item-toggle:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(58,184,221);
+    color: white;
+    transition-duration: 0.4s;
+  }
   
+  .js-item-toggle:active {
+    background-color: rgb(58,184,221);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .filterButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(58,184,221);
+    color: white;
+    transition-duration: 0.4s;
+  }
+
+  .filterButton:active {
+    background-color: rgb(58,184,221);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .resetFilt:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(231,132,30);
+    color: white;
+    transition-duration: 0.4s;
+  }
+
+  .resetFilt:active {
+    background-color: rgb(231,132,30);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .expandedButton {
+    cursor: pointer;
+    radius: 10px;
+    border-radius: 5px;
+}
+
+  .expandedButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(231,132,30);
+    color: white;
+    transition-duration: 0.4s;
+  }
+
+  .expandedButton:active {
+    background-color: rgb(231,132,30);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
