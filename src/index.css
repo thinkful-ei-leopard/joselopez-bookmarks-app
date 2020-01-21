@@ -7,6 +7,12 @@
     display: none;
 }
 
+a {
+    text-decoration: none;
+    color: rgb(0,204,0);
+}
+
+
 li {
     list-style: none;
 }
@@ -116,4 +122,33 @@ button {
     background-color: rgb(231,132,30);
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+
+  @media screen and (max-width: 600px) {
+      body {
+          background-color: tan;
+      }
+
+      h1 {
+          font-size: 45px;
+      }
+
+      p {
+          font-size: 15px;
+      }
+  }
+
+  @media screen and (min-width: 601px) {
+      body {
+          background-color: thistle;
+      }
+
+      h1 {
+          font-size: 60px;
+      }
+
+      p {
+          font-size: 17px;
+          width: 50%;
+      }
   }
