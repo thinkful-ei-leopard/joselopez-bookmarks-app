@@ -2,12 +2,37 @@ import $ from 'jquery';
 import store from './store';
 import api from './api';
 
-function handleAddBookMarkForm() {
-    $('.container').on('click', '.show-bookmark-form', event => {
-        $('#bookmark-list-form').toggle()
-    })
+
+function generateBookMarkForm() {
+    return  `<form id="bookmark-list-form">
+    <label for="url">Website Url:</label>
+    <input type="url" name="url" class="js-url-entry" placeholder="e.g., Google.com"
+      required>
+      <label for="title">Title:</label>
+      <input type="text" name="title" class="js-title-entry" placeholder="Google"
+      required>
+      <label for="desc">Description:</label>
+      <input type="text" name="desc" class="js-description-entry" placeholder="Description"
+      >
+      <label for="rating">Rate:</label>
+      <select name="rating" form="bookmark-list-form">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+    <button class="bookMarkItButton" type="submit">Bookmark It!</button>
+  </form>`
 }
 
+function handleAddBookMarkForm() {
+    $('.container').on('click', '.show-bookmark-form', function(event) {
+        store.store.adding = !store.store.adding
+        console.log(store.store.adding)
+        render()
+    })
+}
 
 
 function generateBookMark(item) {
@@ -79,13 +104,14 @@ $.fn.extend({
 
 
 function handleNewBookMarkSubmit(){
-    $('#bookmark-list-form').submit(function(event) {
+    $('.container').on('submit', '#bookmark-list-form', function(event) {
         event.preventDefault();
         let formData = $('#bookmark-list-form').serializeJson();
         console.log(formData)
         api.createBookMark(formData)
             .then((newItem) => {
                 store.addItem(newItem);
+                store.store.adding = !store.store.adding
                 render();
             })
     })
@@ -132,6 +158,12 @@ function render(){
         items = items.filter(el=> el.rating == store.store.filter)
     }
     
+    if(store.store.adding) {
+    $('.formContainer').html(generateBookMarkForm())
+    } else if(!store.store.adding) {
+        $('#bookmark-list-form').remove()
+    }
+
     const bookMarkListitems = concatBookMarks(items)
     $('.js-bookmark-list').html(bookMarkListitems)
 }

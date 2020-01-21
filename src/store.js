@@ -7,11 +7,6 @@ const store = {
 };
 
 
-function changeAdding() {
-    store.adding = !store.adding
-}
-
-
 function findById(id){
     return store.bookmarks.find(currentItem => currentItem.id === id);
 };
@@ -26,5 +21,4 @@ export default {
     findById,
     addItem,
     store,
-    changeAdding
 };
