@@ -5,6 +5,8 @@
 
 
 
+
+
 a {
     text-decoration: none;
     color: rgb(0,204,0);
@@ -37,13 +39,17 @@ li:hover {
 
   form {
       margin-top: 10px;
+      font-weight: bold;
+  }
+
+  p {
+      font-weight: bold;
   }
 
 
 h1 {
     color: rgb(0,204,0);
     text-align: center;
-    border: 2px solid rgb(255,255,255);opacity:0.6;;
     padding: 10px;
     border-radius: 5px;
 }
@@ -202,4 +208,14 @@ button {
           font-size: 17px;
           width: 50%;
       }
+
+      .show-bookmark-form {
+          height: 40px;
+          width: 100px;
+          font-weight: bold;
+      }
+  }
+
+  button {
+      font-weight: bold;
   }
