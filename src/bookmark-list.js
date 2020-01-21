@@ -4,7 +4,7 @@ import api from './api';
 
 
 function generateBookMarkForm() {
-    return  `<form id="bookmark-list-form">
+    return  `<form id="bookmark-list-form" role="bookmark list entry form">
     <label for="url">Website Url:</label>
     <input type="url" name="url" class="js-url-entry" placeholder="e.g., Google.com"
       required>

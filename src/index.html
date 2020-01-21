@@ -3,12 +3,16 @@
 
 <head>
   <title> Keeply | An online Bookmark App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="description" content="An Online Bookmark Application">
+  <meta name="author" content="Jose Lopez">
   <link rel="shortcut icon" href="#">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" aria-live="polite">
     <h1><a href="https://thinkful-ei-leopard.github.io/joselopez-bookmarks-app/">Keeply</a></h1>
     <!-- add link to h1 -->
     <p class="description-paragraph"> Begin to save your favorite sites by pressing the "Add Bookmark" button below!</p>
@@ -23,7 +27,7 @@
 
         <div class="filter-feature-container">
           <p class="filter-feature-paragraph"> You may filter your Bookmarks by using the filter feature below!</p>
-          <form class="filterFeature">
+          <form class="filterFeature" role="filter feature form">
           <label for="filter">Filter By Rating</label>
           <select id="filterVal" name="filter" form="filterFeature">
               <option value="1">1</option>
