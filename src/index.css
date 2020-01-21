@@ -133,7 +133,7 @@ button {
           font-size: 45px;
       }
 
-      p {
+      .description-paragraph {
           font-size: 15px;
       }
   }
@@ -147,7 +147,7 @@ button {
           font-size: 60px;
       }
 
-      p {
+      .description-paragraph {
           font-size: 17px;
           width: 50%;
       }
