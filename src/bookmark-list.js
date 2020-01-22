@@ -9,20 +9,20 @@ function generateBookMarkForm() {
     <input type="url" name="url" class="js-url-entry" placeholder="e.g., Google.com"
       required>
       <label for="title">Title:</label>
-      <input type="text" name="title" class="js-title-entry" placeholder="Google"
+      <input type="text" name="title" class="js-title-entry" placeholder="e.g., Google"
       required>
       <label for="desc">Description:</label>
       <input type="text" name="desc" class="js-description-entry" placeholder="Description"
       >
-      <label for="rating">Rate:</label>
-      <select name="rating" form="bookmark-list-form">
+      <label for="rating" class"rateLabel">Rate:</label>
+      <select name="rating" form="bookmark-list-form" class="rateButton">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
-    <button class="bookMarkItButton" type="submit">Bookmark It!</button>
+        <button class="bookMarkItButton" type="submit">Bookmark It!</button>
   </form>`
 }
 
@@ -37,21 +37,21 @@ function handleAddBookMarkForm() {
 
 function generateBookMark(item) {
     let itemTitle = `<span class="bookmark-item bookmark-item-toggled">
-    ${item.title} Rating: ${item.rating}</span>`;
+    ${item.title} ${item.rating}/5</span>`;
 
     if(item.expanded) {
     return `<li class="js-item-element" data-item-id="${item.id}">
     ${itemTitle}
-    <p> ${item.desc} </p>
-    <form action="${item.url}">
+    <p class="descParagraph"> ${item.desc} </p>
+    <form action="${item.url}" class="external">
     <input type="submit" class="expandedButton" value="Go to ${item.title}" />
     </form>
     <div class="bookmark-item-controls">
     <button class="bookmark-toggleviewbutton js-item-toggle">
-    <span class="button-label"> View description </span>
+    <span class="button-label"> Close Description </span>
     </button>
     <button class="bookmark-delete js-item-delete">
-    <span class="button-label"> delete </span>
+    <span class="button-label"> Delete </span>
     </button>
     </div>
     </li>`} else {
@@ -59,10 +59,10 @@ function generateBookMark(item) {
         ${itemTitle}
         <div class="bookmark-item-controls">
         <button class="bookmark-toggleviewbutton js-item-toggle">
-        <span class="button-label"> View description </span>
+        <span class="button-label"> View Description </span>
         </button>
         <button class="bookmark-delete js-item-delete">
-        <span class="button-label"> delete </span>
+        <span class="button-label"> Delete </span>
         </button>
         </div>
         </li>`
