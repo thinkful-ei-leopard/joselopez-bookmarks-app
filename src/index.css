@@ -15,7 +15,7 @@ a {
 
 li {
     list-style: none;
-    width: 400px;
+    width: auto;
     padding: 20px;
     border-top: 5px solid #8360c3;
     border-bottom: 5px solid #2ebf91;
@@ -29,6 +29,15 @@ li {
     margin-top: 10px;
     cursor: pointer;
     text-align: center;
+}
+
+.bookmark-list{
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 auto; */
 }
 
 
@@ -71,8 +80,8 @@ h1:hover {
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .description-paragraph {
@@ -83,6 +92,7 @@ button {
     cursor: pointer;
     radius: 10px;
     border-radius: 5px;
+    background-color: white;
 }
 
 .show-bookmark-form:active {
@@ -236,13 +246,24 @@ button {
         font-size: 14px;
       }
 
-      ul {
-          width: 100%;
+      .container {
+        align-items: center;
+        justify-content: center;
       }
 
       li {
-          width: 400px;
+          width: 300px;
           margin: 15px auto;
+          position: relative;
+          right: 20px;
+      }
+
+      .bookmark-list{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       input[type=text], textarea, .js-url-entry {
@@ -265,6 +286,11 @@ button {
 
       .descParagraph {
           font-weight: normal;
+      }
+
+      #filterVal {
+        border: 1px solid grey;
+        background-color: white;
       }
 
   }
