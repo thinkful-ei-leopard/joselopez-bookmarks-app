@@ -239,6 +239,9 @@ button {
   button {
     background-color: white;
   }
+  .expandedButton {
+    background-color: white;
+  }
   }
 
   @media screen and (max-width: 649px) {
