@@ -225,6 +225,10 @@ button {
     border: solid gray 1px;
 }
 
+.expandedButton {
+  border: solid red 1px;
+}
+
   @media screen and (max-width: 480px) {
     li {
       width: 300px;
