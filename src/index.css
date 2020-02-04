@@ -242,9 +242,23 @@ button {
   .expandedButton {
     background-color: white;
   }
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 340px;
+  }
+  .footerPara {
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    left: -28px;
   }
 
-  @media screen and (max-width: 649px) {
+  }
+
+  @media screen and (min-width: 520) and (max-width: 649px) {
 
       h1 {
           font-size: 45px;
