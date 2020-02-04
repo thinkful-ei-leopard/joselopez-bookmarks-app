@@ -229,7 +229,7 @@ button {
   border: solid red 1px;
 }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 519px) {
     li {
       width: 300px;
       margin: 15px auto;
@@ -239,25 +239,12 @@ button {
   button {
     background-color: white;
   }
+
   .expandedButton {
     background-color: white;
   }
-  /* footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 340px;
-  } */
-  /* .footerPara {
-    text-align: center;
-    font-size: 14px;
-    position: relative;
-    left: -28px;
-    bottom: -20px;
-  } */
 
-  footer{
+  footer {
     display: none;
   }
 
