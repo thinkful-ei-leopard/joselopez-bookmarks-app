@@ -242,18 +242,23 @@ button {
   .expandedButton {
     background-color: white;
   }
-  footer {
+  /* footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-top: 340px;
-  }
-  .footerPara {
+  } */
+  /* .footerPara {
     text-align: center;
     font-size: 14px;
     position: relative;
     left: -28px;
+    bottom: -20px;
+  } */
+
+  footer{
+    display: none;
   }
 
   }
