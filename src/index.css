@@ -333,6 +333,11 @@ button {
           font-size: 60px;
       }
 
+      .js-item-element {
+        position: relative;
+        left: -25px;
+      }
+
       .description-paragraph {
           font-size: 17px;
           width: 50%;
