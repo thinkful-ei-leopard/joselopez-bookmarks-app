@@ -229,6 +229,28 @@ button {
   border: solid red 1px;
 }
 
+.js-description-entry {
+  border: 1px solid gray;
+  margin: 5px;
+}
+
+.js-url-entry {
+  border: 1px solid gray;
+}
+
+.js-title-entry {
+  border: 1px solid gray;
+}
+
+input[type=text], .js-url-entry
+ {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
   @media screen and (max-width: 519px) {
     li {
       width: 300px;
